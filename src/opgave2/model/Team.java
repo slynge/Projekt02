@@ -40,10 +40,9 @@ public class Team {
     }
 
     public void removeStudent(String name) {
-        for (Student student : students) {
-            if(student.getName().equals(name)) {
-                this.students.remove(student);
-
+        for (int index = 0; index < students.size(); index++) {
+            if(students.get(index).getName().equals(name)) {
+                students.remove(students.get(index));
             }
         }
     }
