@@ -13,6 +13,10 @@ public class Team {
         setStudents(students);
     }
 
+    public Student getStudent(int index) {
+        return students.get(index);
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -41,24 +45,25 @@ public class Team {
 
     public void removeStudent(String name) {
         for (int index = 0; index < students.size(); index++) {
-            if(students.get(index).getName().equals(name)) {
-                students.remove(students.get(index));
+            Student student = getStudent(index);
+            if(student.getName().equals(name)) {
+                students.remove(student);
             }
         }
     }
 
     // Method for average of all grades given
 
-    public double allStudentsAverage(ArrayList<Student> students){
+    public double getAverageGradeForStudents(){
 
-        double average = 0;
+        double sumOfEachAverageGrade = 0;
         int numberOfStudents = students.size();
 
         for(Student student : students){
-            average += student.averageGrade();
+            sumOfEachAverageGrade += student.averageGrade();
         }
 
-        return average / numberOfStudents;
+        return sumOfEachAverageGrade / numberOfStudents;
     }
 
 

@@ -55,8 +55,8 @@ public class Student {
 
     public double averageGrade() {
         int numberOfGrades = grades.length;
-        int sumOfGrades = sum(grades);
-        return (double) sumOfGrades / numberOfGrades;
+        double sumOfGrades = sum(grades);
+        return sumOfGrades / numberOfGrades;
     }
 
     private int sum(int[] grades) {
