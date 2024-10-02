@@ -49,6 +49,20 @@ public class Team {
 
     // Method for average of all grades given
 
+    public double allStudentsAverage(ArrayList<Student> students){
+
+        double average = 0;
+        int antalStuderne = 0;
+
+        for(Student student : students){
+
+            average = average + student.averageGrade();
+            antalStuderne++;
+        }
+
+        return average/antalStuderne;
+    }
+
 
 
     /*
