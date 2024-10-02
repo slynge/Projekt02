@@ -1,4 +1,4 @@
-package opgave1.model;
+package opgave2.model;
 
 import java.util.ArrayList;
 
@@ -46,6 +46,15 @@ public class Team {
 
             }
         }
+    }
+
+    public void print(){
+        ArrayList<Student> s = new ArrayList<>();
+
+        s = getActiveStudents(students);
+
+        for(Student su : s) System.out.println(su.isActive());
+
     }
 
 }
