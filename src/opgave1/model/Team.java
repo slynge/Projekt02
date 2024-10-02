@@ -27,6 +27,11 @@ public class Team {
         this.students.add(student);
     }
 
+    public ArrayList<Student> getStudentList (){
+        return this.students;
+
+    }
+
     public ArrayList<Student> getActiveStudents(ArrayList<Student> students) {
 
         ArrayList<Student> activeStudents = new ArrayList<>();
@@ -40,7 +45,7 @@ public class Team {
     }
 
     public void removeStudent(String name) {
-        for (Student student : students) {
+        for (Student student : this.students) {
             if(student.getName().equals(name)) {
                 this.students.remove(student);
 

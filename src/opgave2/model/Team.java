@@ -48,15 +48,6 @@ public class Team {
         }
     }
 
-    public void print(){
-        ArrayList<Student> s = new ArrayList<>();
-
-        s = getActiveStudents(students);
-
-        for(Student su : s) System.out.println(su.isActive());
-
-    }
-
     // Method for average of all grades given
 
     /*
