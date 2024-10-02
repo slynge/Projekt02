@@ -7,10 +7,6 @@ public class Team {
     private String room;
     private ArrayList<Student> students;
 
-    public void addStudent(Student student) {
-        students.add(student);
-    }
-
     public Team(String name, String room, ArrayList<Student> students) {
         setName(name);
         setRoom(room);
@@ -25,6 +21,10 @@ public class Team {
     }
     public void setStudents(ArrayList<Student> students) {
         this.students = students;
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
     }
 
     public ArrayList<Student> getActiveStudents(ArrayList<Student> students) {
@@ -46,6 +46,15 @@ public class Team {
 
             }
         }
+    }
+
+    public void print(){
+        ArrayList<Student> s = new ArrayList<>();
+
+        s = getActiveStudents(students);
+
+        for(Student su : s) System.out.println(su.isActive());
+
     }
 
 }
