@@ -1,4 +1,4 @@
-package model;
+package opgave1.model;
 
 import java.util.ArrayList;
 
