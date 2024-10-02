@@ -10,8 +10,6 @@ public class Student {
         setActive(true);
     }
 
-
-
     public String getName() {
         return name;
     }
@@ -27,4 +25,8 @@ public class Student {
     public void setActive(boolean active) {
         this.active = active;
     }
+
+    // Method for highest grade given - use java.util.Collections .max()
+
+    // Method for average
 }

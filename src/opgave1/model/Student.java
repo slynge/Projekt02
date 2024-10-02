@@ -10,7 +10,6 @@ public class Student {
         setActive(true);
     }
 
-
     public void setName(String name) {
         this.name = name;
     }
