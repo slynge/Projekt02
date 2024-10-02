@@ -38,16 +38,15 @@ public class Student {
     }
 
     // Method for highest grade given to student - use java.util.Collections .max()
-    public void highestGrade (Student student){
-        int[] studentGrades = student.getGrades();
-        int highestGrade = 0;
+    public int highestGrade (){
+        int highestGrade = grades[0];
 
-        for(int index : studentGrades){
-            if(highestGrade < index){
-                highestGrade = index;
-                System.out.println(highestGrade);
+        for(int grade : grades){
+            if(highestGrade < grade){
+                highestGrade = grade;
             }
         }
+        return highestGrade;
 
 
     }
