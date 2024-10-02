@@ -25,7 +25,7 @@ public class App {
         team1.addStudent(torben);
         team1.removeStudent(torben.getName());
 
-        team1.getActiveStudents(team1.getStudentList());
+        team1.getActiveStudents();
 
         team2.addStudent(torben);
         team2.addStudent(bo);

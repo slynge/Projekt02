@@ -13,6 +13,10 @@ public class Team {
         setStudents(students);
     }
 
+    public Student getStudent(int index) {
+        return students.get(index);
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -24,15 +28,10 @@ public class Team {
     }
 
     public void addStudent(Student student) {
-        this.students.add(student);
+        students.add(student);
     }
 
-    public ArrayList<Student> getStudentList (){
-        return this.students;
-
-    }
-
-    public ArrayList<Student> getActiveStudents(ArrayList<Student> students) {
+    public ArrayList<Student> getActiveStudents() {
 
         ArrayList<Student> activeStudents = new ArrayList<>();
 
@@ -46,8 +45,9 @@ public class Team {
 
     public void removeStudent(String name) {
         for (int index = 0; index < students.size(); index++) {
-            if(students.get(index).getName().equals(name)) {
-                students.remove(students.get(index));
+            Student student = getStudent(index);
+            if(student.getName().equals(name)) {
+                students.remove(student);
             }
         }
     }
