@@ -5,10 +5,9 @@ public class Student {
     private boolean active;
     private int[] grades;
 
-    public Student(String name, boolean active) {
+    public Student(String name) {
         setName(name);
-        setActive(active);
-
+        setActive(true);
     }
 
 

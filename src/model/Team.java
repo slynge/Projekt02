@@ -33,7 +33,7 @@ public class Team {
 
         for (Student student : students) {
             if (student.isActive()) {
-                activeStudents.add(student);
+                model.activeStudents.add(student);
             }
         }
         return activeStudents;
