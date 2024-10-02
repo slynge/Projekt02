@@ -24,10 +24,10 @@ public class Team {
     }
 
     public void addStudent(Student student) {
-        this.students.add(student);
+        students.add(student);
     }
 
-    public ArrayList<Student> getActiveStudents(ArrayList<Student> students) {
+    public ArrayList<Student> getActiveStudents() {
 
         ArrayList<Student> activeStudents = new ArrayList<>();
 
@@ -52,15 +52,13 @@ public class Team {
     public double allStudentsAverage(ArrayList<Student> students){
 
         double average = 0;
-        int antalStuderne = 0;
+        int numberOfStudents = students.size();
 
         for(Student student : students){
-
-            average = average + student.averageGrade();
-            antalStuderne++;
+            average += student.averageGrade();
         }
 
-        return average/antalStuderne;
+        return average / numberOfStudents;
     }
 
 
