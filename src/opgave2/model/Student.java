@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Student {
     private String name;
     private boolean active;
@@ -50,4 +53,18 @@ public class Student {
     }
 
     // Method for average
+
+    public double averageGrade() {
+        int numberOfGrades = grades.length;
+        int sumOfGrades = sum(grades);
+        return (double) sumOfGrades /numberOfGrades;
+    }
+
+    private int sum(int[] grades) {
+        int sumOfGrades = 0;
+        for (int grade : grades) {
+            sumOfGrades += grade;
+        }
+        return sumOfGrades;
+    }
 }

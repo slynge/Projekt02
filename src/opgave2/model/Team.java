@@ -49,6 +49,8 @@ public class Team {
 
     // Method for average of all grades given
 
+
+
     /*
     Method for returning array with students of a certain average
     public Student[] highScoreStudents(double minAverage)
