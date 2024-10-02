@@ -12,7 +12,7 @@ public class App {
         Student torben = new Student("Torben");
         Student emil = new Student("Emil");
         Student christian = new Student("Christian");
-        Student bo = new Student("bo");
+        Student bo = new Student("Bo");
         Student suzuki = new Student("Suzuki");
 
         Team team1 = new Team("Team1","Rum6000", new ArrayList<>());
@@ -26,6 +26,10 @@ public class App {
         team1.removeStudent(torben.getName());
 
         team1.getActiveStudents(team1.getStudentList());
+
+        team2.addStudent(torben);
+        team2.addStudent(bo);
+        team2.addStudent(suzuki);
 
 
     }
