@@ -12,8 +12,18 @@ public class Team {
     }
 
     public Team(String name, String room, ArrayList<Student> students) {
+        setName(name);
+        setRoom(room);
+        setStudents(students);
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+    public void setRoom(String room) {
         this.room = room;
+    }
+    public void setStudents(ArrayList<Student> students) {
         this.students = students;
     }
 
