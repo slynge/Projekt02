@@ -1,4 +1,4 @@
-package model;
+package Opgave1.model;
 
 public class Student {
     private String name;
