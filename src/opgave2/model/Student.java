@@ -3,10 +3,12 @@ package opgave2.model;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Random;
 
 public class Student {
     private String name;
     private boolean active;
+    private char[] answers;
     private int[] grades;
 
     public Student(String name) {
@@ -44,6 +46,24 @@ public class Student {
             }
         }
         return highestGrade;
+    }
+
+    public void generateAnswers() {
+        Random generator = new Random();
+        for (int index = 0; index < answers.length; index++) {
+            int integerValue = generator.nextInt(4);
+            if (index == 0) {
+                answers[index] = 'A';
+            } else if(index == 1) {
+                answers[index] = 'B';
+            }
+            else if(index == 2) {
+                answers[index] = 'C';
+            }
+            else {
+                answers[index] = 'D';
+            }
+        }
     }
 
     // Method for average
