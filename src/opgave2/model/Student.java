@@ -28,11 +28,11 @@ public class Student {
 
     public void setGrades(){
 
-        grades = new int[(int)(Math.random()*10)];
+        grades = new int[(int) (Math.random() * 10)];
 
         for (int index = 0; index < grades.length; index++){
 
-            int grade = (int)(Math.random()*7)+1;
+            int grade = (int) (Math.random() * 7) + 1;
 
             if(grade == 1) grade = -3;
             if(grade == 2) grade = 0;
