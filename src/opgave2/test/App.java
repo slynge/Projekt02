@@ -44,8 +44,10 @@ public class App {
 
         int[] correctAnswersOverall = team1.studentsCorrectAnswers(correctAnswers);
 
-        for(int index : correctAnswersOverall) System.out.println(index);
-
-
+        int spørgsmål = 1;
+        for(int index : correctAnswersOverall) {
+            System.out.println("Spørgsmål " + spørgsmål + ": " + index);
+            spørgsmål++;
+        }
     }
 }
