@@ -34,10 +34,20 @@ public class MultipleChoice {
         for(int outerIndex = 0; outerIndex < multipleChoice[0].length; outerIndex++){
 
             for(int innerIndex = 0; innerIndex < multipleChoice.length; innerIndex++){
-                System.out.print(Quiz[innerIndex][outerIndex] + ", ");
+                System.out.print(" | " + Quiz[ innerIndex][outerIndex]);
             }
-
+            System.out.println(" |");
             System.out.println();
         }
     }
+
+    public char[] correctAnswers(){
+
+        char[] array = new char[10];
+
+        for(char c : array) c = 'A';
+
+        return array;
+    }
+
 }

@@ -89,12 +89,12 @@ public class Team {
 
     }
 
-    public String[] studentInfo(){
+    public String[] studentInfo(char[] correctAnswers){
 
         Student[] students = getActiveStudents();
         String[] studentsInfo = new String[students.length];
 
-        for(int index = 0; index < students.length; index++) studentsInfo[index] = (students[index].getName() + ", " + students[index].averageGrade() + ", " + "Rigitige svar");
+        for(int index = 0; index < students.length; index++) studentsInfo[index] = (students[index].getName() + ", " + students[index].averageGrade() + ", " + students[index].correctAnswers(correctAnswers));
 
         return studentsInfo;
     }
