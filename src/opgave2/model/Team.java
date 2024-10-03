@@ -1,6 +1,7 @@
 package opgave2.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Team {
     private String name;
@@ -73,6 +74,21 @@ public class Team {
     Method for returning array with students of a certain average
     public Student[] highScoreStudents(double minAverage)
      */
+    public Student[] highScoreStudents(double minAverage) {
+        Student[] activeStudents = getActiveStudents();
+        ArrayList<Student> activeStudentsList = new ArrayList<>(Arrays.asList(activeStudents));
+
+        for (Student activeStudent : activeStudentsList) {
+            double averageGradeForStudent = activeStudent.averageGrade();
+            if(averageGradeForStudent < minAverage) {
+                activeStudentsList.remove(activeStudent);
+            }
+        }
+
+        Student[] activeHighScoreStudents = new Student[activeStudentsList.size()];
+        return activeStudentsList.toArray(activeHighScoreStudents);
+
+    }
 
 }
 
