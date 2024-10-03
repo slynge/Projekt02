@@ -42,5 +42,10 @@ public class App {
 
         for(String s : studentInfo) System.out.println(s);
 
+        int[] correctAnswersOverall = team1.studentsCorrectAnswers(correctAnswers);
+
+        for(int index : correctAnswersOverall) System.out.println(index);
+
+
     }
 }

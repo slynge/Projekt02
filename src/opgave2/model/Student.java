@@ -88,6 +88,12 @@ public class Student {
         }
     }
 
+    public char[] getAnswers(){
+
+        return this.answers;
+
+    }
+
     public int correctAnswers(char[] correct) {
         int numberOfCorrectAnswers = 0;
         for(int index = 0; index < correct.length; index++) {
