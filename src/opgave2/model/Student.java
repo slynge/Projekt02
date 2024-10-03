@@ -8,7 +8,7 @@ import java.util.Random;
 public class Student {
     private String name;
     private boolean active;
-    private char[] answers = new char[10];
+    private char[] answers;
     private int[] grades;
 
     public Student(String name) {
@@ -27,22 +27,13 @@ public class Student {
     }
 
     public void setGrades(){
-
         grades = new int[(int)(Math.random()*10) + 1];
 
+        int[] gradeConversions = {-3, 0, 2, 4, 7, 10, 12};
+
         for (int index = 0; index < grades.length; index++){
-
-            int grade = (int)(Math.random()*7)+1;
-
-            if(grade == 1) grade = -3;
-            if(grade == 2) grade = 0;
-            if(grade == 3) grade = 2;
-            if(grade == 4) grade = 4;
-            if(grade == 5) grade = 7;
-            if(grade == 6) grade = 10;
-            if(grade == 7) grade = 12;
-
-            this.grades[index] = grade;
+            int randomGrade = (int) (Math.random() * 7);
+            grades[index] = gradeConversions[randomGrade];
         }
     }
 
@@ -58,8 +49,8 @@ public class Student {
         this.active = active;
     }
 
-    // Method for highest grade given to student - use java.util.Collections .max()
-    public int highestGrade (){
+    // 2.1
+    public int getHighestGrade (){
         int highestGrade = grades[0];
 
         for(int grade : grades){
@@ -70,8 +61,17 @@ public class Student {
         return highestGrade;
     }
 
+    // 2.2
+    public double getAverageGrade() {
+        int numberOfGrades = grades.length;
+        double sumOfGrades = sum(grades);
+        return sumOfGrades / numberOfGrades;
+    }
+
     public void generateAnswers() {
         Random generator = new Random();
+        answers = new char[10];
+
         for (int index = 0; index < answers.length; index++) {
             int integerValue = generator.nextInt(4);
             if (integerValue == 0) {
@@ -89,8 +89,7 @@ public class Student {
     }
 
     public char[] getAnswers(){
-
-        return this.answers;
+        return answers;
 
     }
 
@@ -104,14 +103,7 @@ public class Student {
         return numberOfCorrectAnswers;
     }
 
-    // Method for average
-
-    public double averageGrade() {
-        int numberOfGrades = grades.length;
-        int sumOfGrades = sum(grades);
-        return (double) sumOfGrades /numberOfGrades;
-    }
-
+    // helper function for 2.2
     private int sum(int[] grades) {
         int sumOfGrades = 0;
         for (int grade : grades) {

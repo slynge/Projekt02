@@ -32,17 +32,15 @@ public class Team {
         students.add(student);
     }
 
-    public Student[] getActiveStudents() {
-
-        ArrayList<Student> activeStudentsList = new ArrayList<>();
+    public ArrayList<Student> getActiveStudents() {
+        ArrayList<Student> activeStudents = new ArrayList<>();
 
         for (Student student : students) {
             if (student.isActive()) {
-                activeStudentsList.add(student);
+                activeStudents.add(student);
             }
         }
-        Student[] activeStudents = new Student[activeStudentsList.size()];
-        return activeStudentsList.toArray(activeStudents);
+        return activeStudents;
     }
 
     public void removeStudent(String name) {
@@ -54,18 +52,23 @@ public class Team {
         }
     }
 
-    // Method for average of all grades given
-
+    // 2.3
     public double getAverageGradeForStudents(){
-
-        double sumOfEachAverageGrade = 0;
         int numberOfStudents = students.size();
+        double sumOfAverageGrades = sumAverageGrades(students);
+        return sumOfAverageGrades / numberOfStudents;
+    }
 
-        for(Student student : students){
-            sumOfEachAverageGrade += student.averageGrade();
+    // 2.4
+    public ArrayList<Student> highScoreStudents(double minAverage) {
+        ArrayList<Student> highScoreStudents = getActiveStudents();
+        for (Student student : highScoreStudents) {
+            double averageGradeForStudent = student.getAverageGrade();
+            if (averageGradeForStudent < minAverage) {
+                highScoreStudents.remove(student);
+            }
         }
-
-        return (sumOfEachAverageGrade / numberOfStudents);
+        return highScoreStudents;
     }
 
     public int[] getArrayOfCorrectAnswers(char[] correctAnswersArray) {
@@ -80,37 +83,18 @@ public class Team {
         return arrayCorrectAnswers;
     }
 
-    /*
-    Method for returning array with students of a certain average
-    public Student[] highScoreStudents(double minAverage)
-     */
-
-    public Student[] highScoreStudents(double minAverage) {
-        Student[] activeStudents = getActiveStudents();
-        ArrayList<Student> activeStudentsList = new ArrayList<>(Arrays.asList(activeStudents));
-
-        for (Student activeStudent : activeStudentsList) {
-            double averageGradeForStudent = activeStudent.averageGrade();
-            if(averageGradeForStudent < minAverage) {
-                activeStudentsList.remove(activeStudent);
-            }
-        }
-
-        Student[] activeHighScoreStudents = new Student[activeStudentsList.size()];
-        return activeStudentsList.toArray(activeHighScoreStudents);
-
-    }
-
     public String[] studentInfo(char[] correctAnswers){
 
-        Student[] students = getActiveStudents();
-        String[] studentsInfo = new String[students.length];
+        ArrayList<Student> activeStudents = getActiveStudents();
+        String[] studentsInfo = new String[activeStudents.size()];
 
-        for(int index = 0; index < students.length; index++)
-            studentsInfo[index] = (students[index].getName() + ", " + students[index].averageGrade() + ", " + students[index].correctAnswers(correctAnswers));
-
+        for(int index = 0; index < activeStudents.size(); index++) {
+            Student student = getStudent(index);
+            studentsInfo[index] = (student.getName() + ", " + student.getAverageGrade()  + ", " + student.correctAnswers(correctAnswers));
+        }
         return studentsInfo;
     }
+
 
     public int[] studentsCorrectAnswers(char[] correctAnswers){
 
@@ -130,6 +114,15 @@ public class Team {
 
 
         return studentsCorrectAnswersAmount;
+    }
+
+    // helper function for 2.3
+    private double sumAverageGrades(ArrayList<Student> students) {
+        double sumOfAverageGrade = 0;
+        for(Student student : students){
+            sumOfAverageGrade += student.getAverageGrade();
+        }
+        return sumOfAverageGrade;
     }
 
 
