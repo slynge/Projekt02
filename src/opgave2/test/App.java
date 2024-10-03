@@ -2,6 +2,7 @@ package opgave2.test;
 
 import opgave1.model.Student;
 import opgave1.model.Team;
+import opgave2.model.MultipleChoice;
 
 import java.util.ArrayList;
 
@@ -30,6 +31,11 @@ public class App {
         team2.addStudent(torben);
         team2.addStudent(bo);
         team2.addStudent(suzuki);
+
+        MultipleChoice multi = new MultipleChoice();
+
+        multi.fillQuiz();
+        multi.printQuiz();
 
 
     }

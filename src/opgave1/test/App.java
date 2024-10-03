@@ -31,6 +31,10 @@ public class App {
         team2.addStudent(bo);
         team2.addStudent(suzuki);
 
+        String[][] test = new String[5][10];
+
+        System.out.println(test[0].length);
+
 
     }
 }

@@ -65,7 +65,7 @@ public class Team {
             sumOfEachAverageGrade += student.averageGrade();
         }
 
-        return sumOfEachAverageGrade / numberOfStudents;
+        return (sumOfEachAverageGrade / numberOfStudents);
     }
 
     /*
