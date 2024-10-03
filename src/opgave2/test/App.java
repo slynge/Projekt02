@@ -40,14 +40,14 @@ public class App {
 
         String[] studentInfo = team1.studentInfo(correctAnswers);
 
-        for(String s : studentInfo) System.out.println(s);
+        for(String string : studentInfo) System.out.println(string);
 
         int[] correctAnswersOverall = team1.studentsCorrectAnswers(correctAnswers);
 
-        int spørgsmål = 1;
+        int questionNumber = 1;
         for(int index : correctAnswersOverall) {
-            System.out.println("Spørgsmål " + spørgsmål + ": " + index);
-            spørgsmål++;
+            System.out.println("Question " + questionNumber + ": " + index);
+            questionNumber++;
         }
     }
 }
