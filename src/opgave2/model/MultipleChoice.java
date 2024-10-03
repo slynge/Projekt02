@@ -14,7 +14,7 @@ public class MultipleChoice {
         return multipleChoice;
     }
 
-    public String[][] fillQuiz(){
+    private String[][] fillQuiz(){
 
         String[][] multipleChoice = new String[5][10];
 
@@ -32,7 +32,7 @@ public class MultipleChoice {
 
     public void printQuiz(){
 
-        String[][] Quiz = this.multipleChoice;
+        String[][] Quiz = fillQuiz();
 
         for(int index = 0; index < multipleChoice[0].length; index++){
 

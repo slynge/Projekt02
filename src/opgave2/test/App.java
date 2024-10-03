@@ -34,7 +34,6 @@ public class App {
 
         MultipleChoice multi = new MultipleChoice();
 
-        multi.fillQuiz();
         multi.printQuiz();
 
 
