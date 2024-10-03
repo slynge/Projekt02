@@ -13,11 +13,11 @@ public class MultipleChoice {
         return multipleChoice;
     }
 
-    private String[][] fillQuiz(){
+    private String[][] fillQuiz() {
 
         String[][] multipleChoice = new String[5][10];
 
-        for(int index = 0; index < multipleChoice[0].length; index++){
+        for (int index = 0; index < multipleChoice[0].length; index++) {
             multipleChoice[0][index] = "Spørgsmål " + (index + 1);
             multipleChoice[1][index] = "A";
             multipleChoice[2][index] = "B";
@@ -34,7 +34,11 @@ public class MultipleChoice {
         for(int outerIndex = 0; outerIndex < multipleChoice[0].length; outerIndex++){
 
             for(int innerIndex = 0; innerIndex < multipleChoice.length; innerIndex++){
-                System.out.print(" | " + Quiz[ innerIndex][outerIndex]);
+                if (innerIndex == 0){
+                    System.out.print(Quiz[ innerIndex][outerIndex]);
+                } else {
+                    System.out.print(" | " + Quiz[ innerIndex][outerIndex]);
+                }
             }
             System.out.println(" |");
             System.out.println();
@@ -42,11 +46,8 @@ public class MultipleChoice {
     }
 
     public char[] correctAnswers(){
-
         char[] array = new char[10];
-
-        for(char c : array) c = 'A';
-
+        for(char character : array) character = 'A';
         return array;
     }
 
