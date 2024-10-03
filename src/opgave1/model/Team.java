@@ -13,6 +13,14 @@ public class Team {
         setStudents(students);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
     public Student getStudent(int index) {
         return students.get(index);
     }
@@ -31,17 +39,15 @@ public class Team {
         students.add(student);
     }
 
-    public Student[] getActiveStudents() {
-
-        ArrayList<Student> activeStudentsList = new ArrayList<>();
+    public ArrayList<Student> getActiveStudents() {
+        ArrayList<Student> activeStudents = new ArrayList<>();
 
         for (Student student : students) {
             if (student.isActive()) {
-                activeStudentsList.add(student);
+                activeStudents.add(student);
             }
         }
-        Student[] activeStudents = new Student[activeStudentsList.size()];
-        return activeStudentsList.toArray(activeStudents);
+        return activeStudents;
     }
 
     public void removeStudent(String name) {

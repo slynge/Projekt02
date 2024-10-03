@@ -23,6 +23,4 @@ public class Student {
     public boolean isActive() {
         return active;
     }
-
-
 }
