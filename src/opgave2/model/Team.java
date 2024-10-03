@@ -68,6 +68,18 @@ public class Team {
         return (sumOfEachAverageGrade / numberOfStudents);
     }
 
+    public int[] getArrayOfCorrectAnswers(char[] correctAnswersArray) {
+        int[] arrayCorrectAnswers = new int[students.size()];
+
+        for(int index = 0; index < students.size(); index++) {
+            Student student = getStudent(index);
+            int correctAnswers = student.correctAnswers(correctAnswersArray);
+            arrayCorrectAnswers[index] = correctAnswers;
+        }
+
+        return arrayCorrectAnswers;
+    }
+
     /*
     Method for returning array with students of a certain average
     public Student[] highScoreStudents(double minAverage)
