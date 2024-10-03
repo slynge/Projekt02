@@ -68,8 +68,6 @@ public class Team {
         return sumOfEachAverageGrade / numberOfStudents;
     }
 
-
-
     /*
     Method for returning array with students of a certain average
     public Student[] highScoreStudents(double minAverage)

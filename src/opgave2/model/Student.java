@@ -47,16 +47,14 @@ public class Student {
             }
         }
         return highestGrade;
-
-
     }
 
     // Method for average
 
     public double averageGrade() {
         int numberOfGrades = grades.length;
-        double sumOfGrades = sum(grades);
-        return sumOfGrades / numberOfGrades;
+        int sumOfGrades = sum(grades);
+        return (double) sumOfGrades /numberOfGrades;
     }
 
     private int sum(int[] grades) {
