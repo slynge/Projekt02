@@ -14,6 +14,7 @@ public class Student {
     public Student(String name) {
         setName(name);
         setActive(true);
+        generateAnswers();
     }
 
     public String getName() {
