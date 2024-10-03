@@ -67,6 +67,16 @@ public class Student {
         }
     }
 
+    public int correctAnswers(char[] correct) {
+        int numberOfCorrectAnswers = 0;
+        for(int index = 0; index < correct.length; index++) {
+            if(correct[index] == answers[index]) {
+                numberOfCorrectAnswers++;
+            }
+        }
+        return numberOfCorrectAnswers;
+    }
+
     // Method for average
 
     public double averageGrade() {
