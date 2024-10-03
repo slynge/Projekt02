@@ -31,16 +31,17 @@ public class Team {
         students.add(student);
     }
 
-    public ArrayList<Student> getActiveStudents() {
+    public Student[] getActiveStudents() {
 
-        ArrayList<Student> activeStudents = new ArrayList<>();
+        ArrayList<Student> activeStudentsList = new ArrayList<>();
 
         for (Student student : students) {
             if (student.isActive()) {
-                activeStudents.add(student);
+                activeStudentsList.add(student);
             }
         }
-        return activeStudents;
+        Student[] activeStudents = new Student[activeStudentsList.size()];
+        return activeStudentsList.toArray(activeStudents);
     }
 
     public void removeStudent(String name) {
