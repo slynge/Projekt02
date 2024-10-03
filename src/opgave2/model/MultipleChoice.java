@@ -47,7 +47,9 @@ public class MultipleChoice {
 
     public char[] correctAnswers(){
         char[] array = new char[10];
-        for(char character : array) character = 'A';
+        for(char character : array){
+            character = 'A';
+        }
         return array;
     }
 
