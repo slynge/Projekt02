@@ -90,5 +90,15 @@ public class Team {
 
     }
 
+    public String[] studentInfo(){
+
+        Student[] students = getActiveStudents();
+        String[] studentsInfo = new String[students.length];
+
+        for(int index = 0; index < students.length; index++) studentsInfo[index] = (students[index].getName() + ", " + students[index].averageGrade() + ", " + "Rigitige svar");
+
+        return studentsInfo;
+    }
+
 }
 
