@@ -49,7 +49,7 @@ public class MultipleChoice {
 
     public char[] correctAnswers(){
         char[] array = new char[10];
-        Arrays.fill(array, 'A');
+        Arrays.fill(array, 'B');
         return array;
     }
 

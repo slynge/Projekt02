@@ -28,7 +28,7 @@ public class Student {
 
     public void setGrades(){
 
-        grades = new int[(int)(Math.random()*10)];
+        grades = new int[(int)(Math.random()*10) + 1];
 
         for (int index = 0; index < grades.length; index++){
 
@@ -74,12 +74,12 @@ public class Student {
         Random generator = new Random();
         for (int index = 0; index < answers.length; index++) {
             int integerValue = generator.nextInt(4);
-            if (index == 0) {
+            if (integerValue == 0) {
                 answers[index] = 'A';
-            } else if(index == 1) {
+            } else if(integerValue == 1) {
                 answers[index] = 'B';
             }
-            else if(index == 2) {
+            else if(integerValue == 2) {
                 answers[index] = 'C';
             }
             else {
