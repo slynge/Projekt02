@@ -31,10 +31,10 @@ public class MultipleChoice {
 
         String[][] Quiz = fillQuiz();
 
-        for(int index = 0; index < multipleChoice[0].length; index++){
+        for(int outerIndex = 0; outerIndex < multipleChoice[0].length; outerIndex++){
 
-            for(int index2 = 0; index2 < multipleChoice.length; index2++){
-                System.out.print(Quiz[index2][index] + ", ");
+            for(int innerIndex = 0; innerIndex < multipleChoice.length; innerIndex++){
+                System.out.print(Quiz[innerIndex][outerIndex] + ", ");
             }
 
             System.out.println();
