@@ -38,7 +38,9 @@ public class App {
 
         char[] correctAnswers = multi.correctAnswers();
 
-        System.out.println(team1.studentInfo(correctAnswers));
+        String[] studentInfo = team1.studentInfo(correctAnswers);
+
+        for(String s : studentInfo) System.out.println(s);
 
     }
 }
