@@ -8,13 +8,14 @@ import java.util.Random;
 public class Student {
     private String name;
     private boolean active;
-    private char[] answers;
+    private char[] answers = new char[10];
     private int[] grades;
 
     public Student(String name) {
         setName(name);
         setActive(true);
         generateAnswers();
+        setGrades();
     }
 
     public String getName() {
@@ -23,6 +24,26 @@ public class Student {
 
     public int[] getGrades() {
         return grades;
+    }
+
+    public void setGrades(){
+
+        grades = new int[(int)(Math.random()*10)];
+
+        for (int index = 0; index < grades.length; index++){
+
+            int grade = (int)(Math.random()*7)+1;
+
+            if(grade == 1) grade = -3;
+            if(grade == 2) grade = 0;
+            if(grade == 3) grade = 2;
+            if(grade == 4) grade = 4;
+            if(grade == 5) grade = 7;
+            if(grade == 6) grade = 10;
+            if(grade == 7) grade = 12;
+
+            this.grades[index] = grade;
+        }
     }
 
     public void setName(String name) {
