@@ -4,10 +4,9 @@ public class MultipleChoice {
 
     private String[][] multipleChoice = new String[5][10];
 
+
     public MultipleChoice(){
-
         this.multipleChoice = fillQuiz();
-
     }
 
     public String[][] getMultipleChoice() {
@@ -18,15 +17,13 @@ public class MultipleChoice {
 
         String[][] multipleChoice = new String[5][10];
 
-        for(int i = 0; i < multipleChoice[0].length; i++){
-
-            multipleChoice[0][i] = "Spørgsmål " + (i+1);
-            multipleChoice[1][i] = "A";
-            multipleChoice[2][i] = "B";
-            multipleChoice[3][i] = "C";
-            multipleChoice[4][i] = "D";
+        for(int index = 0; index < multipleChoice[0].length; index++){
+            multipleChoice[0][index] = "Spørgsmål " + (index + 1);
+            multipleChoice[1][index] = "A";
+            multipleChoice[2][index] = "B";
+            multipleChoice[3][index] = "C";
+            multipleChoice[4][index] = "D";
         }
-
         return multipleChoice;
     }
 
@@ -37,16 +34,10 @@ public class MultipleChoice {
         for(int index = 0; index < multipleChoice[0].length; index++){
 
             for(int index2 = 0; index2 < multipleChoice.length; index2++){
-
                 System.out.print(Quiz[index2][index] + ", ");
-
             }
+
             System.out.println();
         }
-
-
     }
-
-
-
 }

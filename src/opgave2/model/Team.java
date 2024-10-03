@@ -72,6 +72,7 @@ public class Team {
     Method for returning array with students of a certain average
     public Student[] highScoreStudents(double minAverage)
      */
+
     public Student[] highScoreStudents(double minAverage) {
         Student[] activeStudents = getActiveStudents();
         ArrayList<Student> activeStudentsList = new ArrayList<>(Arrays.asList(activeStudents));

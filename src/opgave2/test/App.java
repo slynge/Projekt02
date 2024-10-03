@@ -36,6 +36,5 @@ public class App {
 
         multi.printQuiz();
 
-
     }
 }
