@@ -1,5 +1,7 @@
 package opgave2.model;
 
+import java.util.Arrays;
+
 public class MultipleChoice {
 
     private String[][] multipleChoice = new String[5][10];
@@ -45,7 +47,7 @@ public class MultipleChoice {
 
         char[] array = new char[10];
 
-        for(char c : array) c = 'A';
+        Arrays.fill(array, 'A');
 
         return array;
     }
