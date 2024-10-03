@@ -100,5 +100,26 @@ public class Team {
         return studentsInfo;
     }
 
+    public int[] studentsCorrectAnswers(char[] correctAnswers){
+
+        int[] studentsCorrectAnswersAmount = new int[10];
+
+        for(int outerIndex = 0; outerIndex < this.students.size(); outerIndex++){
+
+            char[] studentAnswers = this.students.get(outerIndex).getAnswers();
+
+            for(int innerIndex = 0; innerIndex < correctAnswers.length; innerIndex++){
+
+                if(correctAnswers[innerIndex] == studentAnswers[innerIndex]) studentsCorrectAnswersAmount[innerIndex]++;
+
+            }
+
+        }
+
+
+        return studentsCorrectAnswersAmount;
+    }
+
+
 }
 
