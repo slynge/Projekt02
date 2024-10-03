@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Student {
     private String name;
     private boolean active;
