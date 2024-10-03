@@ -94,7 +94,8 @@ public class Team {
         Student[] students = getActiveStudents();
         String[] studentsInfo = new String[students.length];
 
-        for(int index = 0; index < students.length; index++) studentsInfo[index] = (students[index].getName() + ", " + students[index].averageGrade() + ", " + students[index].correctAnswers(correctAnswers));
+        for(int index = 0; index < students.length; index++)
+            studentsInfo[index] = (students[index].getName() + ", " + students[index].averageGrade() + ", " + students[index].correctAnswers(correctAnswers));
 
         return studentsInfo;
     }

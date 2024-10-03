@@ -1,7 +1,7 @@
 package opgave2.test;
 
-import opgave1.model.Student;
-import opgave1.model.Team;
+import opgave2.model.Student;
+import opgave2.model.Team;
 import opgave2.model.MultipleChoice;
 
 import java.util.ArrayList;
@@ -35,6 +35,10 @@ public class App {
         MultipleChoice multi = new MultipleChoice();
 
         multi.printQuiz();
+
+        char[] correctAnswers = multi.correctAnswers();
+
+        System.out.println(team1.studentInfo(correctAnswers));
 
     }
 }
