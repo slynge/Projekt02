@@ -39,11 +39,7 @@ public class App3b {
         return scanner.nextLine();
     }
 
-    private static Team createTeam (){
-
-    }
-
-    private static Team appUIMenuOutcome(int inputNumber, ArrayList<Team> teamList){
+    private static ArrayList appUIMenuOutcome(int inputNumber, ArrayList<Team> teamList){
 
         switch (inputNumber){
 
@@ -90,7 +86,7 @@ public class App3b {
         }
 
 
-
+        return teamList;
     }
 
 }
