@@ -17,7 +17,7 @@ public class App3b {
         int userSystemStatus = intUserInput();;
 
         while (systemStatus(userSystemStatus)){
-
+            menuUI();
 
             // System requests user interaction
             requestUserInteraction();
