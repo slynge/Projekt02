@@ -31,10 +31,18 @@ public class App {
         team2.addStudent(suzuki);
 
         // Display the highest grade for Martin.
-        System.out.printf("Martins highest grade is: %d\n", martin.getHighestGrade());
+        displayHighestGradeForStudent(martin);
 
         // Display average grade for Martin.
-        System.out.printf("Martins average grade is: %f.\n", martin.getAverageGrade());
+        displayAverageGradeForStudent(martin);
+
+        // Display the average grade for team1.
+        displayAverageGradeForTeam(team1);
+
+        // Display the high scoring students for team1.
+        // We want them with an average grade over 7.
+        displayHighScoreStudentsForTeam(team1, 7);
+
 
         MultipleChoice multi = new MultipleChoice();
 
@@ -52,6 +60,31 @@ public class App {
         for(int index : correctAnswersOverall) {
             System.out.println("Question " + questionNumber + ": " + index);
             questionNumber++;
+        }
+    }
+
+    private static void displayHighestGradeForStudent(Student student) {
+        System.out.printf("%s's highest grade is: %d.\n", student.getName(), student.getHighestGrade());
+    }
+
+    private static void displayAverageGradeForStudent(Student student) {
+        System.out.printf("%s's average grade is: %f.\n", student.getName(), student.getAverageGrade());
+    }
+
+    private static void displayAverageGradeForTeam(Team team1) {
+        System.out.printf("%s's average grade is: %f.\n", team1.getName(), team1.getAverageGradeForTeam());
+    }
+
+    private static void displayHighScoreStudentsForTeam(Team team, double minAverage) {
+        ArrayList<Student> highScoreStudents = team.getHighScoreStudents(minAverage);
+        if(highScoreStudents.isEmpty()) {
+            System.out.printf("%s has no high scoring students. \n", team.getName());
+        }
+        else {
+            System.out.printf("%s has the following high scoring students (listed with name):\n", team.getName());
+            for (Student highScoreStudent : highScoreStudents) {
+                System.out.println(highScoreStudent.getName());
+            }
         }
     }
 }

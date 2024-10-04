@@ -18,6 +18,10 @@ public class Team {
         return students.get(index);
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -53,19 +57,21 @@ public class Team {
     }
 
     // 2.3
-    public double getAverageGradeForStudents(){
+    public double getAverageGradeForTeam(){
         int numberOfStudents = students.size();
         double sumOfAverageGrades = sumAverageGrades(students);
         return sumOfAverageGrades / numberOfStudents;
     }
 
     // 2.4
-    public ArrayList<Student> highScoreStudents(double minAverage) {
-        ArrayList<Student> highScoreStudents = getActiveStudents();
-        for (Student student : highScoreStudents) {
-            double averageGradeForStudent = student.getAverageGrade();
+    public ArrayList<Student> getHighScoreStudents(double minAverage) {
+        ArrayList<Student> activeStudents = getActiveStudents();
+        ArrayList<Student> highScoreStudents = new ArrayList<>();
+
+        for (Student activeStudent : activeStudents) {
+            double averageGradeForStudent = activeStudent.getAverageGrade();
             if (averageGradeForStudent < minAverage) {
-                highScoreStudents.remove(student);
+                highScoreStudents.add(activeStudent);
             }
         }
         return highScoreStudents;
