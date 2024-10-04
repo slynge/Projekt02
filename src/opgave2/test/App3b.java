@@ -13,44 +13,21 @@ import opgave2.model.MultipleChoice;
 public class App3b {
 
     public static void main(String[] args) {
-        greeting();
-        requestUserInteraction();
+        appLayout.greeting();
+        appLayout.requestUserInteraction();
         int userSystemStatus = intUserInput();;
 
         while (systemStatus(userSystemStatus)){
-            menuUI();
+            appLayout.menuUI();
 
             // System requests user interaction
-            requestUserInteraction();
+            appLayout.requestUserInteraction();
             userSystemStatus = intUserInput();
         }
     }
 
-    private static void greeting(){
-        lineSeparator();
-        System.out.println("Welcome to a educational management system");
-        lineSeparator();
-    }
-    private static void lineSeparator(){
-        System.out.println("===========================================");
-    }
-    private static void requestUserInteraction(){
-        System.out.print("Press 0 to start system: ");
-    }
-
     private static boolean systemStatus(int userInput){
         return (userInput == 0);
-    }
-
-    private static void menuUI(){
-        lineSeparator();
-        System.out.println("1: Create a team");
-        System.out.println("2: Create a student");
-        System.out.println("3: Show one student's info and results");
-        System.out.println("4: Show one  team's info and results");
-        System.out.println("5: Show info and results for all teams");
-        System.out.println("6: Exit program");
-        lineSeparator();
     }
 
     private static int intUserInput(){
