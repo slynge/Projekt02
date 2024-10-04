@@ -143,7 +143,4 @@ public class Team {
         }
         return sumOfAverageGrade;
     }
-
-
 }
-

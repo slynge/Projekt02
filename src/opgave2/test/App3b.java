@@ -45,6 +45,7 @@ public class App3b {
 
         switch (inputNumber){
 
+            //Create Team
             case 1:
                 System.out.print("Write team name: ");
                 String teamName = UserInput.string();
@@ -59,6 +60,7 @@ public class App3b {
                 teamList.add(team);
                 break;
 
+            //Create Student and add to team
             case 2:
                 System.out.print("Name student's team: ");
                 String studentTeam = UserInput.string();
@@ -84,6 +86,7 @@ public class App3b {
                 }
                 break;
 
+            //Show one student's info
             case 3:
                 System.out.print("What student do you want to see info about: ");
                 String studentCase3Name =  UserInput.string();
@@ -93,6 +96,7 @@ public class App3b {
                 }
                 break;
 
+            //Show one team's student info
             case 4:
                 System.out.print("Team's name: ");
                 teamName = UserInput.string();
@@ -103,6 +107,7 @@ public class App3b {
                 displayStudentInfoForTeam(team, correctAnswers);
                 break;
 
+            //Show all team's student info
             case 5:
 
                 for(Team aTeam : teamList) {
@@ -116,6 +121,7 @@ public class App3b {
 
                 break;
 
+            //Exit program
             case 6:
                 System.out.print("Exiting program...");
                 break;
