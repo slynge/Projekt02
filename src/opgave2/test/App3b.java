@@ -10,15 +10,15 @@ import java.util.Scanner;
 public class App3b {
 
     public static void main(String[] args) {
-        appLayout.greeting();
-        appLayout.requestSystemStatus();
+        consoleLayout.greeting();
+        consoleLayout.requestSystemStatus();
         int userSystemStatus = UserInput.integer();
 
         while (systemStatus(userSystemStatus)){
-            appLayout.menuUI();
+            consoleLayout.menuUI();
 
             // System requests user interaction
-            appLayout.requestUserInteraction();
+            consoleLayout.requestUserInteraction();
             int userMenuChoice = UserInput.integer();
             appUIMenuOutcome(userMenuChoice, new ArrayList<>(), correctAnswers);
         }
@@ -35,7 +35,7 @@ public class App3b {
             case 1:
                 System.out.print("Write team name: ");
                 String teamName = UserInput.string();
-                appLayout.whiteSpaceSeparator();
+                consoleLayout.whiteSpaceSeparator();
                 System.out.print("Write team location: ");
                 String location = UserInput.string();
 
