@@ -2,18 +2,22 @@ package opgave2.test;
 
 public class appLayout {
 
-    public static void greeting(){
+    public static void greeting() {
         lineSeparator();
         System.out.println("Welcome to a educational management system");
         lineSeparator();
     }
 
-    public static void lineSeparator(){
+    public static void lineSeparator() {
         System.out.println("===========================================");
     }
 
-    public static void requestUserInteraction(){
+    public static void requestSystemStatus() {
         System.out.print("Press 0 to start system: ");
+    }
+
+    public static void requestionUserInteraction(){
+        System.out.print("Choose a menu section: ");
     }
 
     public static void menuUI(){

@@ -14,14 +14,14 @@ public class App3b {
 
     public static void main(String[] args) {
         appLayout.greeting();
-        appLayout.requestUserInteraction();
+        appLayout.requestSystemStatus();
         int userSystemStatus = intUserInput();;
 
         while (systemStatus(userSystemStatus)){
             appLayout.menuUI();
 
             // System requests user interaction
-            appLayout.requestUserInteraction();
+            appLayout.requestionUserInteraction();
             userSystemStatus = intUserInput();
         }
     }
@@ -53,7 +53,6 @@ public class App3b {
                 Team team = new Team(teamName,location,new ArrayList<Student>());
 
                 teamList.add(team);
-                break;
 
             case 2:
                 System.out.println("Name student's team: ");
