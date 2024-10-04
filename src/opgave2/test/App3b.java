@@ -127,6 +127,7 @@ public class App3b {
                 break;
 
             default:
+                System.out.println("That is not possible to do, you need to write a number between 1-6");
                 break;
         }
         return teamList;
