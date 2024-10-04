@@ -105,6 +105,16 @@ public class App3b {
 
             case 5:
 
+                for(Team aTeam : teamList) {
+
+
+                    System.out.println("Statistic for team: " + aTeam.getName());
+                    team = getTeamByName(aTeam.getName(), teamList);
+                    displayStudentInfoForTeam(team, correctAnswers);
+
+                }
+
+                break;
 
             case 6:
                 System.out.print("--> Program finished.");
