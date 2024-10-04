@@ -9,7 +9,7 @@ public class App3b {
 
     }
 
-    public void UIMenu(){
+    private static void UIMenu(){
 
         System.out.println("1: Create a team");
         System.out.println("2: Create a student");
@@ -28,6 +28,8 @@ public class App3b {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
+
+    private static
 
     switch (inputNumber){
         case -3:
