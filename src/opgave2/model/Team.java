@@ -19,18 +19,6 @@ public class Team {
         return students.get(index);
     }
 
-    public String getStudentInfoByName(String studentName, char[] correctAnswers){
-
-        for(Student neededStudent : this.students) {
-
-            if(neededStudent.getName().equals(studentName)){
-                String info = neededStudent.getName() + ", " + neededStudent.getAverageGrade()  + ", " + neededStudent.getNumberOfCorrectAnswers(correctAnswers);
-                return info;
-            }
-        }
-        return "Something went wrong";
-    }
-
     public String getName() {
         return name;
     }
@@ -116,6 +104,18 @@ public class Team {
         return studentsInfo;
     }
 
+    public String getStudentInfoByName(String studentName, char[] correctAnswers){
+
+        for(Student neededStudent : this.students) {
+
+            if(neededStudent.getName().equals(studentName)){
+                String info = neededStudent.getName() + ", " + neededStudent.getAverageGrade()  + ", " + neededStudent.getNumberOfCorrectAnswers(correctAnswers);
+                return info;
+            }
+        }
+        return "Something went wrong";
+    }
+
 
     // 2.9
     public int[] getNumberOfCorrectAnswersForEachQuestion(char[] correctAnswers){
@@ -144,7 +144,4 @@ public class Team {
         }
         return sumOfAverageGrade;
     }
-
-
 }
-
