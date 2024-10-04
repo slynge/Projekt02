@@ -12,23 +12,18 @@ import opgave2.model.MultipleChoice;
 
 public class App3b {
 
-    private boolean systemStatus; // default false
-
     public static void main(String[] args) {
         greeting();
         requestUserInteraction();
-
         int userSystemStatus = intUserInput();;
 
         while (systemStatus(userSystemStatus)){
-
+            menuUI();
 
             // System requests user interaction
             requestUserInteraction();
             userSystemStatus = intUserInput();
         }
-
-
     }
 
     private static void greeting(){
@@ -39,6 +34,7 @@ public class App3b {
     private static void requestUserInteraction(){
         System.out.print("Press 0 to start system: ");
     }
+
     private static boolean systemStatus(int userInput){
         return (userInput == 0);
     }
@@ -74,33 +70,20 @@ public class App3b {
         return team;
     }
 
-    private static Team AppUIMenuOutcome(int inputNumber, ArrayList<Team> teamList){
+    private static Team appUIMenuOutcome(int inputNumber){
 
         switch (inputNumber){
             case 2:
                 System.out.println("Name student's team: ");
                 String studentTeam = stringUserInput();
-                System.out.println("Name of student");
-                String name = stringUserInput();
-                Student student = new Student(name);
                 System.out.println("Is student active");
                 String isActive = stringUserInput();
-                if(isActive.equals("true")) student.setActive(true);
-                else student.setActive(false);
-                System.out.println("how many grades: ");
-                int amountOfGrade = intUserInput();
-                student.setGrades(amountOfGrade);
-
-                for(Team specificTeam : teamList) if(specificTeam.getName().equals(studentTeam)) specificTeam.addStudent(student);
-
-
-
-
-
+                if(isActive.equals("true"))
             case 3:
             case 4:
             case 5:
             case 6:
+
             //case 7:
 
             default:
