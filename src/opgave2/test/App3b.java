@@ -4,7 +4,11 @@ import opgave2.model.Student;
 import opgave2.model.Team;
 import opgave2.model.MultipleChoice;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import opgave2.model.Team;
+import opgave2.model.Student;
+import opgave2.model.MultipleChoice;
 
 public class App3b {
 
@@ -23,6 +27,7 @@ public class App3b {
             requestUserInteraction();
             userSystemStatus = intUserInput();
         }
+
 
     }
 
@@ -56,19 +61,44 @@ public class App3b {
         return scanner.nextLine();
     }
 
-    private static
+    private static Team createTeam (){
 
-    switch (inputNumber){
-        case -3:
-        case 0:
-        case 2:
-        case 4:
-        case 7:
-        case 10:
-        case 12:
-            return true;
-        default:
-            return false;
+        System.out.print("Write team name");
+        String name = stringUserInput();
+        System.out.println();
+        System.out.print("Write team location");
+        String location = stringUserInput();
+
+        Team team = new Team(name,location,new ArrayList<Student>());
+
+
+        return team;
+    }
+
+    private static Team AppUIMenuOutcome(int inputNumber){
+
+        switch (inputNumber){
+            case 2:
+                System.out.println("Name student's team: ");
+                String studentTeam = stringUserInput();
+                System.out.println("Is student active");
+                String isActive = stringUserInput();
+                if(isActive.equals("true")) 
+
+
+
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            //case 7:
+
+            default:
+
+        }
+
+
+
     }
 
 }
