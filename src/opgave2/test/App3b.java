@@ -37,7 +37,7 @@ public class App3b {
     private static boolean systemStatus(int userInput){
         if(userInput == 0){
             return true;
-        } else if(userInput == 6) {
+        } else if(userInput == 7) {
             return false;
         } else {
             return true;
@@ -89,8 +89,17 @@ public class App3b {
                 }
                 break;
 
-            //Show one student's info
+            //Remove Student from team
             case 3:
+                System.out.print("Which student do you want to remove? ");
+                String studentNameForRemoval = UserInput.string();
+                for(Team specificTeam : teamList) specificTeam.removeStudent(studentNameForRemoval);
+                break;
+
+
+
+            //Show one student's info
+            case 4:
                 System.out.print("What student do you want to see info about: ");
                 String studentCase3Name =  UserInput.string();
 
@@ -100,7 +109,7 @@ public class App3b {
                 break;
 
             //Show one team's student info
-            case 4:
+            case 5:
                 System.out.print("Team's name: ");
                 teamName = UserInput.string();
 
@@ -111,7 +120,7 @@ public class App3b {
                 break;
 
             //Show all team's student info
-            case 5:
+            case 6:
 
                 for(Team aTeam : teamList) {
                     System.out.println("Statistic for team: " + aTeam.getName());
@@ -123,7 +132,7 @@ public class App3b {
                 break;
 
             //Exit program
-            case 6:
+            case 7:
                 System.out.print("Exiting program...");
                 break;
 
