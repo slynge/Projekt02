@@ -43,6 +43,9 @@ public class App {
         // We want them with an average grade over 7.
         displayHighScoreStudentsForTeam(team1, 7);
 
+        // Since the constructor calls generateAnswer(), it's hard to test it.
+        // We can, however, just get the grades.
+        displayTheGradesOfStudent(martin);
 
         MultipleChoice multi = new MultipleChoice();
 
@@ -86,5 +89,22 @@ public class App {
                 System.out.println(highScoreStudent.getName());
             }
         }
+    }
+
+    private static void displayTheGradesOfStudent(Student student) {
+    int[] grades = student.getGrades();
+        System.out.printf("%s has the following grades (listed in an array ", student.getName());
+        System.out.print("[");
+        for (int index = 0; index < grades.length; index++) {
+            int grade = grades[index];
+            if(index == 0) {
+                System.out.print(grade);
+            }
+            else {
+                System.out.print(", " + grade);
+            }
+        }
+        System.out.print("].");
+
     }
 }

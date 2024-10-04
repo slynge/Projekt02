@@ -115,9 +115,7 @@ public class Team {
                 if(correctAnswers[innerIndex] == studentAnswers[innerIndex]) studentsCorrectAnswersAmount[innerIndex]++;
 
             }
-
         }
-
 
         return studentsCorrectAnswersAmount;
     }
