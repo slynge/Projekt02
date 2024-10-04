@@ -18,7 +18,7 @@ public class App3b {
             appLayout.menuUI();
 
             // System requests user interaction
-            appLayout.requestionUserInteraction();
+            appLayout.requestUserInteraction();
             int userMenuChoice = UserInput.integer();
             appUIMenuOutcome(userMenuChoice, new ArrayList<>());
         }
@@ -71,7 +71,6 @@ public class App3b {
             case 4:
             case 5:
             case 6:
-
             //case 7:
 
             default:
