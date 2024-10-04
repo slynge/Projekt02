@@ -135,7 +135,7 @@ public class App3b {
         }
         return teamList;
     }
-
+    // helper method for case 5
     private static Team getTeamByName(String teamName, ArrayList<Team> teamList) {
         for (Team team : teamList) {
             if(team.getName().equals(teamName)) {
