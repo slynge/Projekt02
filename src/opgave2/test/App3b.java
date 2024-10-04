@@ -7,9 +7,15 @@ import opgave2.model.MultipleChoice;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static opgave2.model.Print.displayStudentInfoForTeam;
+
 public class App3b {
 
     public static void main(String[] args) {
+        ArrayList<Team> teamList = new ArrayList<Team>();
+        MultipleChoice multipleChoice = new MultipleChoice();
+        char[] correctAnswers = multipleChoice.getCorrectAnswers();
+
         appLayout.greeting();
         appLayout.requestSystemStatus();
         int userSystemStatus = UserInput.integer();
@@ -20,7 +26,7 @@ public class App3b {
             // System requests user interaction
             appLayout.requestUserInteraction();
             int userMenuChoice = UserInput.integer();
-            appUIMenuOutcome(userMenuChoice, new ArrayList<>(), correctAnswers);
+            appUIMenuOutcome(userMenuChoice, teamList, correctAnswers);
         }
     }
 
@@ -67,21 +73,38 @@ public class App3b {
                 System.out.print("What student you want to see info about");
                 String studentCase3Name =  UserInput.string();
 
-                for(Team specificTeam :teamList) System.out.println(specificTeam.getStudentInfoByName(studentCase3Name, correctAnswers));
+                for(Team specificTeam : teamList) System.out.println(specificTeam.getStudentInfoByName(studentCase3Name, correctAnswers));
 
                 break;
 
             case 4:
+                System.out.print("Team's name: ");
+                teamName = UserInput.string();
+                System.out.println("Statistic for team: " + teamName);
+                team = getTeamByName(teamName, teamList);
+                displayStudentInfoForTeam(team, correctAnswers);
+                break;
             case 5:
+
+
             case 6:
+                System.out.print("--> Program finished.");
+                break;
+
             //case 7:
 
             default:
 
         }
-
-
         return teamList;
     }
 
+    private static Team getTeamByName(String teamName, ArrayList<Team> teamList) {
+        for (Team team : teamList) {
+            if(team.getName() == teamName) {
+                return team;
+            }
+        }
+        return null;
+    }
 }
