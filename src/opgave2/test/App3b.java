@@ -5,7 +5,6 @@ import opgave2.model.Team;
 import opgave2.model.MultipleChoice;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import static opgave2.model.Print.displayStudentInfoForTeam;
 
@@ -26,15 +25,20 @@ public class App3b {
             consoleLayout.requestUserInteraction();
             int userMenuChoice = UserInput.integer();
             teamList = appUIMenuOutcome(userMenuChoice, teamList, correctAnswers);
+
+            consoleLayout.requestSystemStatus();
+            userSystemStatus = UserInput.integer();
         }
     }
 
     private static boolean systemStatus(int userInput){
-
-        if(userInput == 0) return true;
-        else if(userInput == 6) return false;
-        else return true;
-
+        if(userInput == 0){
+            return true;
+        } else if(userInput == 6) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     private static ArrayList appUIMenuOutcome(int inputNumber, ArrayList<Team> teamList, char[] correctAnswers){
@@ -58,35 +62,44 @@ public class App3b {
             case 2:
                 System.out.print("Name student's team: ");
                 String studentTeam = UserInput.string();
+
                 System.out.print("Student name: ");
                 String studentName = UserInput.string();
+
                 Student student = new Student(studentName);
+
                 System.out.print("Is student active?: ");
                 String isActive = UserInput.string();
-                if(isActive.equals("yes")) student.setActive(true);
-                else student.setActive(false);
+
+                if(isActive.equals("yes")){
+                    student.setActive(true);
+                } else student.setActive(false);
+
                 System.out.print("How many grades: ");
                 int amountOfGrade = UserInput.integer();
                 student.setGrades(amountOfGrade);
 
-                for(Team specificTeam : teamList) if(specificTeam.getName().equals(studentTeam)) specificTeam.addStudent(student);
+                for(Team specificTeam : teamList){
+                    if(specificTeam.getName().equals(studentTeam)) specificTeam.addStudent(student);
+                }
                 break;
 
-
             case 3:
-
                 System.out.print("What student do you want to see info about: ");
                 String studentCase3Name =  UserInput.string();
 
-                for(Team specificTeam : teamList) System.out.println(specificTeam.getStudentInfoByName(studentCase3Name, correctAnswers));
-
+                for(Team specificTeam : teamList){
+                    System.out.println(specificTeam.getStudentInfoByName(studentCase3Name, correctAnswers));
+                }
                 break;
 
             case 4:
                 System.out.print("Team's name: ");
                 teamName = UserInput.string();
+
                 System.out.println("Statistic for team: " + teamName);
                 team = getTeamByName(teamName, teamList);
+
                 displayStudentInfoForTeam(team, correctAnswers);
                 break;
 
@@ -97,14 +110,9 @@ public class App3b {
                 System.out.print("--> Program finished.");
                 break;
 
-            //case 7:
-
             default:
                 break;
-
         }
-
-
         return teamList;
     }
 
