@@ -68,12 +68,7 @@ public class App {
         // Let's display the student info now.
         displayStudentInfoForTeam(team1, correctAnswers);
 
-        int[] correctAnswersOverall = team1.studentsCorrectAnswers(correctAnswers);
-
-        int questionNumber = 1;
-        for(int index : correctAnswersOverall) {
-            System.out.println("Question " + questionNumber + ": " + index);
-            questionNumber++;
-        }
+        // Let's display the number of correct answers for each question for team1.
+        displayATeamsNumberOfCorrectAnswersForEachQuestion(team1, correctAnswers);
     }
 }
