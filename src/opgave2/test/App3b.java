@@ -12,7 +12,7 @@ import static opgave2.model.Print.displayStudentInfoForTeam;
 public class App3b {
 
     public static void main(String[] args) {
-        ArrayList<Team> teamList = new ArrayList<Team>();
+        ArrayList<Team> teamList = new ArrayList<>();
         MultipleChoice multipleChoice = new MultipleChoice();
         char[] correctAnswers = multipleChoice.getCorrectAnswers();
         consoleLayout.greeting();
@@ -25,7 +25,7 @@ public class App3b {
             // System requests user interaction
             consoleLayout.requestUserInteraction();
             int userMenuChoice = UserInput.integer();
-            appUIMenuOutcome(userMenuChoice, new ArrayList<>(), correctAnswers);
+            teamList = appUIMenuOutcome(userMenuChoice, teamList, correctAnswers);
         }
     }
 
@@ -57,7 +57,7 @@ public class App3b {
                 Student student = new Student(studentName);
                 System.out.print("Is student active?: ");
                 String isActive = UserInput.string();
-                if(isActive.equals("true")) student.setActive(true);
+                if(isActive.equals("yes")) student.setActive(true);
                 else student.setActive(false);
                 System.out.print("How many grades: ");
                 int amountOfGrade = UserInput.integer();
@@ -69,10 +69,10 @@ public class App3b {
 
             case 3:
 
-                System.out.print("What student you want to see info about");
+                System.out.print("What student do you want to see info about: ");
                 String studentCase3Name =  UserInput.string();
 
-                for(Team specificTeam :teamList) System.out.println(specificTeam.getStudentInfoByName(studentCase3Name, correctAnswers));
+                for(Team specificTeam : teamList) System.out.println(specificTeam.getStudentInfoByName(studentCase3Name, correctAnswers));
 
                 break;
 
@@ -83,6 +83,7 @@ public class App3b {
                 team = getTeamByName(teamName, teamList);
                 displayStudentInfoForTeam(team, correctAnswers);
                 break;
+
             case 5:
 
 
@@ -93,6 +94,7 @@ public class App3b {
             //case 7:
 
             default:
+                break;
 
         }
 
@@ -102,7 +104,7 @@ public class App3b {
 
     private static Team getTeamByName(String teamName, ArrayList<Team> teamList) {
         for (Team team : teamList) {
-            if(team.getName() == teamName) {
+            if(team.getName().equals(teamName)) {
                 return team;
             }
         }
