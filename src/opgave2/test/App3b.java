@@ -94,8 +94,8 @@ public class App3b {
                 System.out.print("Which student do you want to remove? ");
                 String studentNameForRemoval = UserInput.string();
                 for(Team specificTeam : teamList) specificTeam.removeStudent(studentNameForRemoval);
-                break;
 
+                break;
 
 
             //Show one student's info
