@@ -81,4 +81,15 @@ public class Print {
         }
         System.out.println();
     }
+
+    public static void displayATeamsNumberOfCorrectAnswersForEachQuestion(Team team, char[] correctAnswers) {
+        int[] correctAnswersOverall = team.getNumberOfCorrectAnswersForEachQuestion(correctAnswers);
+
+        System.out.printf("%s has the following number of correct answers (listed by each question.)\n", team.getName());
+        int questionNumber = 1;
+        for(int numberOfCorrectAnswerOnQuestion : correctAnswersOverall) {
+            System.out.println("Question " + questionNumber + ": " + numberOfCorrectAnswerOnQuestion);
+            questionNumber++;
+        }
+    }
 }

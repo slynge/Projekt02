@@ -87,11 +87,11 @@ public class Student {
     public void generateAnswers() {
         Random generator = new Random();
         answers = new char[10];
-        char[] charValues = {'A', 'B', 'C', 'D'};
+        char[] choices = {'A', 'B', 'C', 'D'};
 
         for (int index = 0; index < answers.length; index++) {
-            int integerValue = generator.nextInt(4);
-            answers[index] = charValues[integerValue];
+            int integerValue= generator.nextInt(4);
+            answers[index] = choices[integerValue];
         }
     }
 

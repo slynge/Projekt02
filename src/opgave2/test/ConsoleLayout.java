@@ -1,6 +1,6 @@
 package opgave2.test;
 
-public class consoleLayout {
+public class ConsoleLayout {
 
     public static void greeting() {
         lineSeparator();
@@ -23,7 +23,7 @@ public class consoleLayout {
     }
 
     public static void menuUI(){
-        consoleLayout.lineSeparator();
+        ConsoleLayout.lineSeparator();
         System.out.println("Menu:");
         System.out.println("1: Create a team");
         System.out.println("2: Create a student");
@@ -31,6 +31,6 @@ public class consoleLayout {
         System.out.println("4: Show one  team's info and results");
         System.out.println("5: Show info and results for all teams");
         System.out.println("6: Exit program");
-        consoleLayout.lineSeparator();
+        ConsoleLayout.lineSeparator();
     }
 }

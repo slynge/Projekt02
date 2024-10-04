@@ -109,7 +109,7 @@ public class Team {
         ArrayList<String> studentsInfo = new ArrayList<>();
 
         for(Student activeStudent : activeStudents) {
-            String info = activeStudent.getName() + ", " + activeStudent.getAverageGrade()  + ", " + activeStudent.getNumberOfCorrectAnswers(correctAnswers);
+            String info = "Navn: " + activeStudent.getName() + "\t Gennemsnit:  " + activeStudent.getAverageGrade()  + "\t Antal rigtige: " + activeStudent.getNumberOfCorrectAnswers(correctAnswers);
             studentsInfo.add(info);
         }
 
@@ -117,7 +117,8 @@ public class Team {
     }
 
 
-    public int[] studentsCorrectAnswers(char[] correctAnswers){
+    // 2.9
+    public int[] getNumberOfCorrectAnswersForEachQuestion(char[] correctAnswers){
 
         int[] studentsCorrectAnswersAmount = new int[10];
 

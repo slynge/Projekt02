@@ -14,15 +14,15 @@ public class App3b {
         ArrayList<Team> teamList = new ArrayList<>();
         MultipleChoice multipleChoice = new MultipleChoice();
         char[] correctAnswers = multipleChoice.getCorrectAnswers();
-        consoleLayout.greeting();
-        consoleLayout.requestSystemStatus();
+        ConsoleLayout.greeting();
+        ConsoleLayout.requestSystemStatus();
         int userSystemStatus = UserInput.integer();
 
         while (systemStatus(userSystemStatus)){
-            consoleLayout.menuUI();
+            ConsoleLayout.menuUI();
 
             // System requests user interaction
-            consoleLayout.requestUserInteraction();
+            ConsoleLayout.requestUserInteraction();
             int userMenuChoice = UserInput.integer();
             teamList = appUIMenuOutcome(userMenuChoice, teamList, correctAnswers);
 
@@ -50,7 +50,7 @@ public class App3b {
                 System.out.print("Write team name: ");
                 String teamName = UserInput.string();
 
-                consoleLayout.whiteSpaceSeparator();
+                ConsoleLayout.whiteSpaceSeparator();
 
                 System.out.print("Write team location: ");
                 String location = UserInput.string();
