@@ -27,8 +27,11 @@ public class App3b {
     }
 
     private static void greeting(){
-        System.out.println("===========================================");
+        lineSeparator();
         System.out.println("Welcome to a educational management system");
+        lineSeparator();
+    }
+    private static void lineSeparator(){
         System.out.println("===========================================");
     }
     private static void requestUserInteraction(){
@@ -40,12 +43,14 @@ public class App3b {
     }
 
     private static void menuUI(){
+        lineSeparator();
         System.out.println("1: Create a team");
         System.out.println("2: Create a student");
         System.out.println("3: Show one student's info and results");
         System.out.println("4: Show one  team's info and results");
         System.out.println("5: Show info and results for all teams");
         System.out.println("6: Exit program");
+        lineSeparator();
     }
 
     private static int intUserInput(){
