@@ -1,5 +1,8 @@
 package opgave2.model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 public class Student {
@@ -12,6 +15,7 @@ public class Student {
         setName(name);
         setActive(true);
         generateAnswers();
+        setGrades();
     }
 
     public String getName() {
@@ -26,8 +30,8 @@ public class Student {
         return answers;
     }
 
-    public void setGrades(int numberOfGrades){
-        grades = new int[numberOfGrades];
+    public void setGrades(){
+        grades = new int[(int)(Math.random()*10) + 1];
 
         int[] gradeConversions = {-3, 0, 2, 4, 7, 10, 12};
 
@@ -80,7 +84,7 @@ public class Student {
         }
     }
 
-    public int correctAnswers(char[] correct) {
+    public int getNumberOfCorrectAnswers(char[] correct) {
         int numberOfCorrectAnswers = 0;
         for(int index = 0; index < correct.length; index++) {
             if(correct[index] == answers[index]) {

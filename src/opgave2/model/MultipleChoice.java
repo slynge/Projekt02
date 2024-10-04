@@ -4,20 +4,25 @@ import java.util.Arrays;
 
 public class MultipleChoice {
 
-    private String[][] multipleChoice = new String[5][10];
-
+    private String[][] multipleChoice;
+    private char[] correctAnswers;
 
     public MultipleChoice(){
-        this.multipleChoice = fillQuiz();
+        fillQuiz();
+        generateCorrectAnswers();
     }
 
     public String[][] getMultipleChoice() {
         return multipleChoice;
     }
 
+    public char[] getCorrectAnswers() {
+        return correctAnswers;
+    }
+
     private String[][] fillQuiz() {
 
-        String[][] multipleChoice = new String[5][10];
+        multipleChoice = new String[5][10];
 
         for (int index = 0; index < multipleChoice[0].length; index++) {
             multipleChoice[0][index] = "Spørgsmål " + (index + 1);
@@ -47,10 +52,9 @@ public class MultipleChoice {
         }
     }
 
-    public char[] correctAnswers(){
-        char[] array = new char[10];
-        Arrays.fill(array, 'B');
-        return array;
+    private void generateCorrectAnswers(){
+        correctAnswers = new char[10];
+        Arrays.fill(correctAnswers, 'B');
     }
 
 }

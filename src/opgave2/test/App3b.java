@@ -6,9 +6,6 @@ import opgave2.model.MultipleChoice;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import opgave2.model.Team;
-import opgave2.model.Student;
-import opgave2.model.MultipleChoice;
 
 public class App3b {
 

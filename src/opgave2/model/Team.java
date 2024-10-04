@@ -1,6 +1,8 @@
 package opgave2.model;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Team {
     private String name;
@@ -76,27 +78,29 @@ public class Team {
         return highScoreStudents;
     }
 
-    public int[] getArrayOfCorrectAnswers(char[] correctAnswersArray) {
-        int[] arrayCorrectAnswers = new int[students.size()];
+    // 2.7
+    public ArrayList<Integer> getCorrectAnswersForTeam(char[] correctAnswers) {
+        ArrayList<Student> activeStudents = getActiveStudents();
+        ArrayList<Integer> correctAnswersForTeam = new ArrayList<>();
 
-        for(int index = 0; index < students.size(); index++) {
-            Student student = getStudent(index);
-            int correctAnswers = student.correctAnswers(correctAnswersArray);
-            arrayCorrectAnswers[index] = correctAnswers;
+        for(Student activeStudent : activeStudents) {
+            int correctAnswersForStudent = activeStudent.getNumberOfCorrectAnswers(correctAnswers);
+            correctAnswersForTeam.add(correctAnswersForStudent);
         }
-
-        return arrayCorrectAnswers;
+        return correctAnswersForTeam;
     }
 
-    public String[] studentInfo(char[] correctAnswers){
+    // 2.8
+    public ArrayList<String> getStudentInfo(char[] correctAnswers){
 
         ArrayList<Student> activeStudents = getActiveStudents();
-        String[] studentsInfo = new String[activeStudents.size()];
+        ArrayList<String> studentsInfo = new ArrayList<>();
 
-        for(int index = 0; index < activeStudents.size(); index++) {
-            Student student = getStudent(index);
-            studentsInfo[index] = (student.getName() + ", " + student.getAverageGrade()  + ", " + student.correctAnswers(correctAnswers));
+        for(Student activeStudent : activeStudents) {
+            String info = activeStudent.getName() + ", " + activeStudent.getAverageGrade()  + ", " + activeStudent.getNumberOfCorrectAnswers(correctAnswers);
+            studentsInfo.add(info);
         }
+
         return studentsInfo;
     }
 

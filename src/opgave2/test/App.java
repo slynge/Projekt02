@@ -3,6 +3,7 @@ package opgave2.test;
 import opgave2.model.Student;
 import opgave2.model.Team;
 import opgave2.model.MultipleChoice;
+import static opgave2.model.Print.*;
 
 import java.util.ArrayList;
 
@@ -47,15 +48,25 @@ public class App {
         // We can, however, just get the grades.
         displayTheGradesOfStudent(martin);
 
-        MultipleChoice multi = new MultipleChoice();
+        // Make an object of MultipleChoice, we will use this object
+        // to print the quiz and also get the correct answers.
+        MultipleChoice multipleChoice = new MultipleChoice();
 
-        multi.printQuiz();
+        // Print the quiz.
+        multipleChoice.printQuiz();
 
-        char[] correctAnswers = multi.correctAnswers();
+        // Get the correct answers.
+        char[] correctAnswers = multipleChoice.getCorrectAnswers();
 
-        String[] studentInfo = team1.studentInfo(correctAnswers);
+        // Now lets display the number of correct answers Martin had on his
+        // multiple choice test.
+        displayNumberOfCorrectAnswersForStudent(martin, correctAnswers);
 
-        for(String string : studentInfo) System.out.println(string);
+        // Now lets display the number of correct answers for each student in a team.
+        displayCorrectAnswersForTeam(team1, correctAnswers);
+
+        // Let's display the student info now.
+        displayStudentInfoForTeam(team1, correctAnswers);
 
         int[] correctAnswersOverall = team1.studentsCorrectAnswers(correctAnswers);
 
@@ -64,47 +75,5 @@ public class App {
             System.out.println("Question " + questionNumber + ": " + index);
             questionNumber++;
         }
-    }
-
-    private static void displayHighestGradeForStudent(Student student) {
-        System.out.printf("%s's highest grade is: %d.\n", student.getName(), student.getHighestGrade());
-    }
-
-    private static void displayAverageGradeForStudent(Student student) {
-        System.out.printf("%s's average grade is: %f.\n", student.getName(), student.getAverageGrade());
-    }
-
-    private static void displayAverageGradeForTeam(Team team1) {
-        System.out.printf("%s's average grade is: %f.\n", team1.getName(), team1.getAverageGradeForTeam());
-    }
-
-    private static void displayHighScoreStudentsForTeam(Team team, double minAverage) {
-        ArrayList<Student> highScoreStudents = team.getHighScoreStudents(minAverage);
-        if(highScoreStudents.isEmpty()) {
-            System.out.printf("%s has no high scoring students. \n", team.getName());
-        }
-        else {
-            System.out.printf("%s has the following high scoring students (listed with name):\n", team.getName());
-            for (Student highScoreStudent : highScoreStudents) {
-                System.out.println(highScoreStudent.getName());
-            }
-        }
-    }
-
-    private static void displayTheGradesOfStudent(Student student) {
-    int[] grades = student.getGrades();
-        System.out.printf("%s has the following grades (listed in an array ", student.getName());
-        System.out.print("[");
-        for (int index = 0; index < grades.length; index++) {
-            int grade = grades[index];
-            if(index == 0) {
-                System.out.print(grade);
-            }
-            else {
-                System.out.print(", " + grade);
-            }
-        }
-        System.out.print("].");
-
     }
 }
