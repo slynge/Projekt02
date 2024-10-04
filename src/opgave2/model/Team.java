@@ -19,6 +19,18 @@ public class Team {
         return students.get(index);
     }
 
+    public String getStudentInfoByName(String studentName, char[] correctAnswers){
+
+        for(Student neededStudent : this.students) {
+
+            if(neededStudent.getName().equals(studentName)){
+                String info = neededStudent.getName() + ", " + neededStudent.getAverageGrade()  + ", " + neededStudent.getNumberOfCorrectAnswers(correctAnswers);
+                return info;
+            }
+        }
+        return "Something went wrong";
+    }
+
     public String getName() {
         return name;
     }

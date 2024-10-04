@@ -17,6 +17,7 @@ public class Student {
         generateAnswers();
         setGrades(-1);
     }
+
     public Student(String name, int setGrades_){
         setName(name);
         setActive(true);

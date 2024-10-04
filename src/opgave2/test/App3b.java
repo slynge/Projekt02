@@ -20,7 +20,7 @@ public class App3b {
             // System requests user interaction
             appLayout.requestionUserInteraction();
             int userMenuChoice = UserInput.integer();
-            appUIMenuOutcome(userMenuChoice, new ArrayList<>());
+            appUIMenuOutcome(userMenuChoice, new ArrayList<>(), correctAnswers);
         }
     }
 
@@ -28,7 +28,7 @@ public class App3b {
         return (userInput == 0);
     }
 
-    private static ArrayList appUIMenuOutcome(int inputNumber, ArrayList<Team> teamList){
+    private static ArrayList appUIMenuOutcome(int inputNumber, ArrayList<Team> teamList, char[] correctAnswers){
 
         switch (inputNumber){
 
@@ -64,10 +64,12 @@ public class App3b {
             case 3:
 
                 System.out.print("What student you want to see info about");
+                String studentCase3Name =  UserInput.string();
 
-
+                for(Team specificTeam :teamList) System.out.println(specificTeam.getStudentInfoByName(studentCase3Name, correctAnswers));
 
                 break;
+
             case 4:
             case 5:
             case 6:
