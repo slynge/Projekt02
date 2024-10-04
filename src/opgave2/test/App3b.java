@@ -53,6 +53,7 @@ public class App3b {
                 Team team = new Team(teamName,location,new ArrayList<Student>());
 
                 teamList.add(team);
+                break;
 
             case 2:
                 System.out.println("Name student's team: ");
