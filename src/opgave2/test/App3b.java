@@ -30,7 +30,11 @@ public class App3b {
     }
 
     private static boolean systemStatus(int userInput){
-        return (userInput == 0);
+
+        if(userInput == 0) return true;
+        else if(userInput == 6) return false;
+        else return true;
+
     }
 
     private static ArrayList appUIMenuOutcome(int inputNumber, ArrayList<Team> teamList, char[] correctAnswers){
