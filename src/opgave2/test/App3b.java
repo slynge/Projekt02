@@ -12,12 +12,9 @@ import opgave2.model.MultipleChoice;
 
 public class App3b {
 
-    private boolean systemStatus; // default false
-
     public static void main(String[] args) {
         greeting();
         requestUserInteraction();
-
         int userSystemStatus = intUserInput();;
 
         while (systemStatus(userSystemStatus)){
@@ -27,8 +24,6 @@ public class App3b {
             requestUserInteraction();
             userSystemStatus = intUserInput();
         }
-
-
     }
 
     private static void greeting(){
@@ -39,6 +34,7 @@ public class App3b {
     private static void requestUserInteraction(){
         System.out.print("Press 0 to start system: ");
     }
+
     private static boolean systemStatus(int userInput){
         return (userInput == 0);
     }
@@ -71,11 +67,10 @@ public class App3b {
 
         Team team = new Team(name,location,new ArrayList<Student>());
 
-
         return team;
     }
 
-    private static Team AppUIMenuOutcome(int inputNumber){
+    private static Team appUIMenuOutcome(int inputNumber){
 
         switch (inputNumber){
             case 2:
@@ -83,14 +78,12 @@ public class App3b {
                 String studentTeam = stringUserInput();
                 System.out.println("Is student active");
                 String isActive = stringUserInput();
-                if(isActive.equals("true")) 
-
-
-
+                if(isActive.equals("true"))
             case 3:
             case 4:
             case 5:
             case 6:
+
             //case 7:
 
             default:
