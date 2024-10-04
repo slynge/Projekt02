@@ -71,7 +71,7 @@ public class App3b {
                 System.out.print("Is student active?: ");
                 String isActive = UserInput.string();
 
-                if(isActive.equals("yes")){
+                if(isActive.equals("yes") || isActive.equals("Yes")){
                     student.setActive(true);
                 } else student.setActive(false);
 
