@@ -11,6 +11,9 @@ public class appLayout {
     public static void lineSeparator() {
         System.out.println("===========================================");
     }
+    public static void whiteSpaceSeparator(){
+        System.out.println();
+    }
 
     public static void requestSystemStatus() {
         System.out.print("Press 0 to start system: ");
