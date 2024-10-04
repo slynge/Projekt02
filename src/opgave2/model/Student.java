@@ -90,7 +90,7 @@ public class Student {
         char[] choices = {'A', 'B', 'C', 'D'};
 
         for (int index = 0; index < answers.length; index++) {
-            int integerValue= generator.nextInt(4);
+            int integerValue = generator.nextInt(4);
             answers[index] = choices[integerValue];
         }
     }
