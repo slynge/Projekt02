@@ -54,9 +54,6 @@ public class App3b {
 
                 teamList.add(team);
 
-
-
-
             case 2:
                 System.out.println("Name student's team: ");
                 String studentTeam = stringUserInput();

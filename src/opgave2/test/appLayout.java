@@ -1,17 +1,21 @@
 package opgave2.test;
 
 public class appLayout {
+
     public static void greeting(){
         lineSeparator();
         System.out.println("Welcome to a educational management system");
         lineSeparator();
     }
+
     public static void lineSeparator(){
         System.out.println("===========================================");
     }
+
     public static void requestUserInteraction(){
         System.out.print("Press 0 to start system: ");
     }
+
     public static void menuUI(){
         appLayout.lineSeparator();
         System.out.println("1: Create a team");
