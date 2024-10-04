@@ -26,6 +26,10 @@ public class Student {
         return grades;
     }
 
+    public char[] getAnswers(){
+        return answers;
+    }
+
     public void setGrades(){
         grades = new int[(int)(Math.random()*10) + 1];
 
@@ -68,29 +72,16 @@ public class Student {
         return sumOfGrades / numberOfGrades;
     }
 
+    // 2.5
     public void generateAnswers() {
         Random generator = new Random();
         answers = new char[10];
+        char[] charValues = {'A', 'B', 'C', 'D'};
 
         for (int index = 0; index < answers.length; index++) {
             int integerValue = generator.nextInt(4);
-            if (integerValue == 0) {
-                answers[index] = 'A';
-            } else if(integerValue == 1) {
-                answers[index] = 'B';
-            }
-            else if(integerValue == 2) {
-                answers[index] = 'C';
-            }
-            else {
-                answers[index] = 'D';
-            }
+            answers[index] = charValues[integerValue];
         }
-    }
-
-    public char[] getAnswers(){
-        return answers;
-
     }
 
     public int correctAnswers(char[] correct) {
