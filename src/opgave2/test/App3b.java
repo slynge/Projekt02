@@ -15,18 +15,17 @@ public class App3b {
         ArrayList<Team> teamList = new ArrayList<Team>();
         MultipleChoice multipleChoice = new MultipleChoice();
         char[] correctAnswers = multipleChoice.getCorrectAnswers();
-
-        appLayout.greeting();
-        appLayout.requestSystemStatus();
+        consoleLayout.greeting();
+        consoleLayout.requestSystemStatus();
         int userSystemStatus = UserInput.integer();
 
         while (systemStatus(userSystemStatus)){
-            appLayout.menuUI();
+            consoleLayout.menuUI();
 
             // System requests user interaction
-            appLayout.requestUserInteraction();
+            consoleLayout.requestUserInteraction();
             int userMenuChoice = UserInput.integer();
-            appUIMenuOutcome(userMenuChoice, teamList, correctAnswers);
+            appUIMenuOutcome(userMenuChoice, new ArrayList<>(), correctAnswers);
         }
     }
 
@@ -41,7 +40,7 @@ public class App3b {
             case 1:
                 System.out.print("Write team name: ");
                 String teamName = UserInput.string();
-                appLayout.whiteSpaceSeparator();
+                consoleLayout.whiteSpaceSeparator();
                 System.out.print("Write team location: ");
                 String location = UserInput.string();
 
@@ -73,7 +72,7 @@ public class App3b {
                 System.out.print("What student you want to see info about");
                 String studentCase3Name =  UserInput.string();
 
-                for(Team specificTeam : teamList) System.out.println(specificTeam.getStudentInfoByName(studentCase3Name, correctAnswers));
+                for(Team specificTeam :teamList) System.out.println(specificTeam.getStudentInfoByName(studentCase3Name, correctAnswers));
 
                 break;
 
@@ -96,6 +95,8 @@ public class App3b {
             default:
 
         }
+
+
         return teamList;
     }
 
