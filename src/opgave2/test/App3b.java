@@ -52,23 +52,30 @@ public class App3b {
                 teamList.add(team);
 
             case 2:
-                System.out.println("Name student's team: ");
+                System.out.print("Name student's team: ");
                 String studentTeam = stringUserInput();
-                System.out.println("Student name");
+                System.out.print("Student name");
                 String studentName = stringUserInput();
                 Student student = new Student(studentName);
-                System.out.println("Is student active");
+                System.out.print("Is student active");
                 String isActive = stringUserInput();
                 if(isActive.equals("true")) student.setActive(true);
                 else student.setActive(false);
-                System.out.println("how many grades: ");
+                System.out.print("how many grades: ");
                 int amountOfGrade = intUserInput();
                 student.setGrades(amountOfGrade);
 
                 for(Team specificTeam : teamList) if(specificTeam.getName().equals(studentTeam)) specificTeam.addStudent(student);
+                break;
 
 
             case 3:
+
+                System.out.print("What student you want to see info about");
+
+
+
+                break;
             case 4:
             case 5:
             case 6:

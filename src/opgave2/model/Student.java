@@ -15,7 +15,14 @@ public class Student {
         setName(name);
         setActive(true);
         generateAnswers();
-        setGrades();
+        setGrades(-1);
+    }
+    public Student(String name, int setGrades_){
+        setName(name);
+        setActive(true);
+        generateAnswers();
+        setGrades(setGrades_);
+
     }
 
     public String getName() {
@@ -30,8 +37,11 @@ public class Student {
         return answers;
     }
 
-    public void setGrades(){
-        grades = new int[(int)(Math.random()*10) + 1];
+    public void setGrades(int gradeSize){
+
+        if(gradeSize == -1) grades = new int[(int)(Math.random()*10) + 1];
+
+        else grades = new int[gradeSize];
 
         int[] gradeConversions = {-3, 0, 2, 4, 7, 10, 12};
 
