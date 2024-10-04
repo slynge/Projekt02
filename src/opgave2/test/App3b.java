@@ -12,8 +12,11 @@ public class App3b {
 
     public static void main(String[] args) {
         ArrayList<Team> teamList = new ArrayList<>();
+
+        //Create multipleChoice test
         MultipleChoice multipleChoice = new MultipleChoice();
         char[] correctAnswers = multipleChoice.getCorrectAnswers();
+
         ConsoleLayout.greeting();
         ConsoleLayout.requestSystemStatus();
         int userSystemStatus = UserInput.integer();
