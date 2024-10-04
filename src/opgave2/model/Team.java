@@ -1,7 +1,6 @@
 package opgave2.model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Team {
     private String name;

@@ -1,5 +1,9 @@
 package opgave2.test;
 
+import opgave2.model.Student;
+import opgave2.model.Team;
+import opgave2.model.MultipleChoice;
+
 import java.util.Scanner;
 
 public class App3b {
@@ -9,7 +13,7 @@ public class App3b {
 
     }
 
-    private static void UIMenu(){
+    private static void appUImenu(){
 
         System.out.println("1: Create a team");
         System.out.println("2: Create a student");
