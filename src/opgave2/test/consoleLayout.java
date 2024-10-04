@@ -18,7 +18,6 @@ public class consoleLayout {
     public static void requestSystemStatus() {
         System.out.print("Press 0 to start system: ");
     }
-
     public static void requestUserInteraction(){
         System.out.print("Choose a menu section: ");
     }

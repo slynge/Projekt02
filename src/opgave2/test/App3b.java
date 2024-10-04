@@ -43,7 +43,9 @@ public class App3b {
             case 1:
                 System.out.print("Write team name: ");
                 String teamName = UserInput.string();
+
                 consoleLayout.whiteSpaceSeparator();
+
                 System.out.print("Write team location: ");
                 String location = UserInput.string();
 
@@ -86,6 +88,7 @@ public class App3b {
                 team = getTeamByName(teamName, teamList);
                 displayStudentInfoForTeam(team, correctAnswers);
                 break;
+
             case 5:
 
 
