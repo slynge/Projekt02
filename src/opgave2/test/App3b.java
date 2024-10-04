@@ -26,6 +26,9 @@ public class App3b {
             consoleLayout.requestUserInteraction();
             int userMenuChoice = UserInput.integer();
             appUIMenuOutcome(userMenuChoice, new ArrayList<>(), correctAnswers);
+
+            consoleLayout.requestSystemStatus();
+            userSystemStatus = UserInput.integer();
         }
     }
 
