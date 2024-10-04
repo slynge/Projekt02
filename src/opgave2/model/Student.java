@@ -12,7 +12,6 @@ public class Student {
         setName(name);
         setActive(true);
         generateAnswers();
-        setGrades();
     }
 
     public String getName() {
@@ -27,8 +26,8 @@ public class Student {
         return answers;
     }
 
-    public void setGrades(){
-        grades = new int[(int)(Math.random()*10) + 1];
+    public void setGrades(int numberOfGrades){
+        grades = new int[numberOfGrades];
 
         int[] gradeConversions = {-3, 0, 2, 4, 7, 10, 12};
 

@@ -71,19 +71,29 @@ public class App3b {
 
         Team team = new Team(name,location,new ArrayList<Student>());
 
-
         return team;
     }
 
-    private static Team AppUIMenuOutcome(int inputNumber){
+    private static Team AppUIMenuOutcome(int inputNumber, ArrayList<Team> teamList){
 
         switch (inputNumber){
             case 2:
                 System.out.println("Name student's team: ");
                 String studentTeam = stringUserInput();
+                System.out.println("Name of student");
+                String name = stringUserInput();
+                Student student = new Student(name);
                 System.out.println("Is student active");
                 String isActive = stringUserInput();
-                if(isActive.equals("true")) 
+                if(isActive.equals("true")) student.setActive(true);
+                else student.setActive(false);
+                System.out.println("how many grades: ");
+                int amountOfGrade = intUserInput();
+                student.setGrades(amountOfGrade);
+
+                for(Team specificTeam : teamList) if(specificTeam.getName().equals(studentTeam)) specificTeam.addStudent(student);
+
+
 
 
 
