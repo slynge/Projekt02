@@ -117,7 +117,7 @@ public class App3b {
                 break;
 
             case 6:
-                System.out.print("--> Program finished.");
+                System.out.print("Exiting program...");
                 break;
 
             default:
