@@ -26,8 +26,8 @@ public class App3b {
             int userMenuChoice = UserInput.integer();
             teamList = appUIMenuOutcome(userMenuChoice, teamList, correctAnswers);
 
-            consoleLayout.requestSystemStatus();
-            userSystemStatus = UserInput.integer();
+            userSystemStatus = userMenuChoice;
+
         }
     }
 
