@@ -136,7 +136,7 @@ public class Team {
         return studentsCorrectAnswersAmount;
     }
 
-    // helper function for 2.3
+    // helper method for 2.3
     private double sumAverageGrades(ArrayList<Student> students) {
         double sumOfAverageGrade = 0;
         for(Student student : students){

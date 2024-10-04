@@ -44,6 +44,7 @@ public class App {
         displayActiveStudents(team1);
     }
 
+    // Helper methods
     private static void displayTeam(Team team) {
         ArrayList<Student> students = team.getStudents();
         System.out.printf("%s has the following students (listed with name):\n", team.getName());

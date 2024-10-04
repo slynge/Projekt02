@@ -11,11 +11,16 @@ import static opgave2.model.Print.displayStudentInfoForTeam;
 public class App3b {
 
     public static void main(String[] args) {
+        // constructor of teamList list object and multiple choice object
         ArrayList<Team> teamList = new ArrayList<>();
         MultipleChoice multipleChoice = new MultipleChoice();
+
         char[] correctAnswers = multipleChoice.getCorrectAnswers();
+
+        // console outputs
         ConsoleLayout.greeting();
         ConsoleLayout.requestSystemStatus();
+
         int userSystemStatus = UserInput.integer();
 
         while (systemStatus(userSystemStatus)){
@@ -77,7 +82,7 @@ public class App3b {
                     student.setActive(true);
                 } else student.setActive(false);
 
-                System.out.print("How many grades: ");
+                System.out.print("How many grades? ");
                 int amountOfGrade = UserInput.integer();
                 student.setGrades(amountOfGrade);
 
@@ -88,7 +93,7 @@ public class App3b {
 
             //Show one student's info
             case 3:
-                System.out.print("What student do you want to see info about: ");
+                System.out.print("What student do you want info about? ");
                 String studentCase3Name =  UserInput.string();
 
                 for(Team specificTeam : teamList){
@@ -111,12 +116,9 @@ public class App3b {
             case 5:
 
                 for(Team aTeam : teamList) {
-
-
                     System.out.println("Statistic for team: " + aTeam.getName());
                     team = getTeamByName(aTeam.getName(), teamList);
                     displayStudentInfoForTeam(team, correctAnswers);
-
                 }
 
                 break;
@@ -132,6 +134,7 @@ public class App3b {
         return teamList;
     }
 
+    // helper method for case 5
     private static Team getTeamByName(String teamName, ArrayList<Team> teamList) {
         for (Team team : teamList) {
             if(team.getName().equals(teamName)) {

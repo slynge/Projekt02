@@ -12,10 +12,6 @@ public class MultipleChoice {
         generateCorrectAnswers();
     }
 
-    public String[][] getMultipleChoice() {
-        return multipleChoice;
-    }
-
     public char[] getCorrectAnswers() {
         return correctAnswers;
     }
@@ -54,6 +50,7 @@ public class MultipleChoice {
 
     private void generateCorrectAnswers(){
         correctAnswers = new char[10];
+        // fill array with correct answers
         Arrays.fill(correctAnswers, 'B');
     }
 
